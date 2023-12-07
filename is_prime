@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+int is_prime(int num){
+   int flag =0;
+for(int i =2;i*i<num;i++){
+ if(num % i == 0){
+   flag =1;
+   break;
+ }
+ }
+ if(flag ==0)
+    {
+      cout<<"prime";
+    }
+ else
+  {  cout<<"Not Prime";
+  }
+
+}
+int main(){
+   int x,y;
+   cout<<"Enter the range u want to calculate \n";
+   cin>>x>>y;
+for(int i =x;i<=y;i++){
+   cout<<i<<" is ";
+   is_prime(i);
+   cout<<endl;
+}
+}
