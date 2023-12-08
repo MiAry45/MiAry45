@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+using namespace std;
+// reverse the array using recursion
+void arr(int i , int arrr[],int n){
+ if(i>= n/2) return;
+ swap(arrr[i],arrr[n-1-i]); 
+ arr(i+1,arrr,n);
+}
+int main(){
+    int arr1[] = {3,5,7,1,2};
+ arr(0,arr1,5);
+ for(int i =0;i<5;i++){
+    cout<<arr1[i]<<" "; // printing the array;
+
+ }
+}
