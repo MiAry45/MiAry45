@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+int is_prime(int num){
+    int flag =1;
+    for(int i=2;i*i<num;i++){
+            if(num % i == 0){
+               flag =0;
+                break;
+            }
+        }
+       return flag;
+}
+int main(){
+    int num;// this is the number of which we have to calculate the factor
+    cin>>num;
+    for(int i =2;i<=num;i++)
+     {
+        if(is_prime(i)){//2
+            while(num % i ==0){
+                num /= i;
+                cout<<i<<" ";}
+        }
+     }
+    
+        
+
+    
+   
+}
