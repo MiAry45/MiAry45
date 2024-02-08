@@ -1,0 +1,48 @@
+#include <bits/stdc++.h>
+using namespace std;
+int selection_sort(int arr[],int size){
+for(int i =0;i<=size-2;i++){
+    int min = i;
+    int t= i;
+    for(int j =t;j<=size-1;j++){
+        if(arr[min]>arr[j]){
+            min = j;
+        }
+    }
+    int temp = arr[i];
+    arr[i] = arr[min];
+    arr[min] = temp;
+}
+}
+int bubble_sort(int arr[],int size){
+for(int i = size-1;i>=0;i--){
+    for(int j = 0;j<=i-1;j++){
+        if(arr[j]>arr[j+1]){
+            int temp = arr[j];
+            arr[j] = arr[j+1];
+            arr[j+1] = temp;
+        }
+    }
+}
+}
+int insertion_sort(int arr[],int size){
+for(int i =0;i<=size-1;i++){
+    int j =i;
+   while(j>0 && arr[j-1]>arr[j]){ // j != 0 as j[0-1] result in out of bound "RUN_TIME"
+    int temp = arr[j-1];
+    arr[j-1] = arr[j];
+    arr[j] = temp;
+    j--;
+   }
+}
+}
+int main(){
+    int arr[]={9,1,4,2,6,7,0};
+    int size = sizeof(arr)/sizeof(arr[0]);
+    // selection_sort(arr,size);
+    // bubble_sort(arr,size);
+    insertion_sort(arr,size);
+    for(int j =0;j<size;j++){
+        cout<<arr[j]<<" ";
+    }
+}
