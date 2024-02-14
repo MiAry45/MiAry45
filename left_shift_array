@@ -1,0 +1,44 @@
+//left shift  the array
+#include <bits/stdc++.h>
+using namespace std;
+/*int main(){ brute solution 
+    int arr[] ={1,2,3,4,5,6,7};
+    
+    int len = sizeof(arr)/ sizeof(arr[0]);
+    cout<<"Enter the places that you want to shift";
+    int d;
+    cin>>d;
+    int temp[d];
+    for(int i =0;i<d;i++){
+        temp[i] = arr[i];
+    }
+    for(int j=d;j<len;j++){
+        arr[j-d] = arr[j] ;
+    }
+    for(int j = len -d;j<len;j++){
+        arr[j] = temp[j-(len-d)];// temp wale ko store karna hai iss bar
+    }
+    for(int i =0;i<len;i++){
+        cout<<arr[i]<<" ";
+    }
+} */
+
+// best solution of the array
+int leftshift(int arr[] , int n, int d){// d = 3 3/2 = 1
+    reverse(arr,arr+d); 
+// reverse function for array is reverse(arr_name,arr+_the_place_till_(not index)_that you want to shift the array)
+    reverse(arr+d,arr+n);
+    reverse(arr,arr+n);
+}
+int main(){
+    int arr[] = {1,2,3,4,5,6,7};
+    int d;
+    cout<<"Enter the number of places that you want to left shift \n";
+    cin>>d;
+    int len = sizeof(arr)/sizeof(arr[0]);
+   leftshift(arr,len,d);
+    for(int i =0;i<len;i++){
+        cout<<arr[i]<<" ";
+    }
+
+}
