@@ -1,0 +1,70 @@
+#include <bits/stdc++.h>
+using namespace std;
+// int main(){
+//     //intersection of two array
+//     vector<int>arr1{1,2,2,3,3,4,5,6};
+//     vector<int>arr2{2,3,3,5,6,6,7};
+//     vector<int>arr3;
+    
+//     for(int i =0;i<arr1.size();i++){
+//         int j ;
+//         for(j = 0+arr3.size();j<arr2.size();j++){
+//             if(arr1[i] == arr2[j] ){
+//                 arr3.push_back(arr1[i]);
+//                 // increment the i
+//                 break;
+                
+//             }
+//         }
+//     }
+//     for(auto it : arr3){
+//         cout<<it<<" ";
+//     }}
+
+
+// striver solution
+/*int main(){
+    vector<int>arr1{1,2,2,3,3,4,5,6};
+    vector<int>arr2{2,3,3,5,6,6,7};
+    vector<int>arr3;
+    int arr[25]={0};
+    for(int i =0;i<arr1.size();i++){
+        for(int j =0;j<arr2.size();j++){
+            if(arr1[i]== arr2[j] && arr[j]==0){
+                arr3.push_back(arr2[j]);
+                arr[j] = 1;
+            }
+        }
+    }
+    for(auto it : arr3){
+        cout<<it<<" ";
+    }
+}*/
+
+// optimal solution
+int main(){
+     vector<int>arr1{1,2,2,3,3,4,5,6};
+    vector<int>arr2{2,3,3,5,6,6,7};
+    vector<int>arr3;
+    int i =0;
+    int j =0;
+    int n1 = arr1.size();
+    int n2 = arr2.size();
+    while(i<n1 and j<n2){
+        if(arr1[i]<arr2[j]){
+            i++;
+        }
+        else if(arr2[j] < arr1[i]){
+            j++;
+        }
+        else{
+            arr3.push_back(arr2[j]);
+            j++;
+            i++;
+        }
+    }
+    for(auto it : arr3){
+        cout<<it<<" ";
+    }
+}
+
