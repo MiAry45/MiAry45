@@ -1,0 +1,24 @@
+/*
+Fibonacci using recursion
+*/
+#include <bits/stdc++.h>
+using namespace std;
+int fib(int n, int n1, int n2){
+if(n == 0){
+return 1;
+}
+cout<<n1<<" ";
+fib(n-1,n2,n2+n1);
+}
+int main(){
+    //make fibonacci 
+    //  0 1 1 2 3 5 8 13 21
+    // given is n, the nth term
+    int n;
+    cin>>n;
+    int n1 =0;
+    int n2 = 1;
+    fib(n,n1,n2);
+
+
+}
