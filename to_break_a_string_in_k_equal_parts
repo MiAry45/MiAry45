@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    // first task is to break the string in k equal parts 
+    int k;
+    cin>>k; // in how many parts u have to divide 
+    string s;
+    cin>>s; // jo string ko conc hote dekhna hai 
+    int len = s.size();
+    // l = 
+    vector<string>yay;
+    int tk = k;
+    int store =0;
+    if(len % k == 0){
+        for(int i =0;i<len;i++){
+            if(i== tk-1){// 2 pai hua 
+                // substring is generated from i to k-1
+                string sub;
+                sub = s.substr(store,k);// to find the substring from a string k se ek phle tak ki
+                yay.push_back(sub);
+                store = i+1;
+                tk = tk+k;
+            }
+    }}
+    else{
+        cout<<"-1";
+    }
+    for(auto it: yay){
+        cout<<it<<" "<<endl;
+    }
+}
