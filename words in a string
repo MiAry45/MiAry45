@@ -1,0 +1,17 @@
+// to calculate the words in the string 
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    string s;
+    getline(cin,s);
+    int word=0;
+    if(s[0] != ' '){ // intitial is space 
+        word ++;
+    }
+    for(int i =0;i<s.size();i++){
+        if(s[i] != ' ' && s[i-1] == ' ' ){
+                word++;
+        }
+    }
+    cout<<word;
+}
