@@ -1,0 +1,52 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int s;
+    cin>>s; // strength of the person
+    int t;
+    cin>>t; // is the number of dragon
+    multimap<int,int>m1;
+    for(int i =0;i<t;i++){
+        int key;
+        int vkey;
+        cin>>key>>vkey;
+        m1.insert({key,vkey}); // till here the values are stored 
+    }
+    int flag = 1;
+    for (auto it = m1.begin(); it != m1.end(); it++) {
+    // cout << it -> first << "\t" << it -> second << endl;
+        if(s > (it -> first)){
+            s += it -> second;
+        }
+        else{
+            flag = 0;
+            break;
+        }
+         }
+    if(flag){
+        cout<<"YES";
+    }
+    else{
+        cout<<"NO";
+    }
+  /*auto it =  m1.find(5); // in multiple cases it will give the key value of the smallest
+  if(it != m1.end()){
+    cout<<it->second;
+  }
+  else{
+    cout<<"Not found";
+  } */
+
+}
+/*
+5 10
+20 1
+4 3
+5 1
+100 1
+4 2
+101 1
+10 0
+10 2
+17 3
+12 84*/
