@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    string s;
+    cin>>s;
+    int l = s.size();
+    map<char,int>m1;
+    for(int i =0;i<l;i++){
+        char ch = s[i];
+        m1[ch]++;
+    }
+    int odd=0;
+    for(auto it : m1){
+        if((it.second) % 2 != 0 ){
+            odd++; // the number of characters which are odd
+ // if it is odd then after just one removal it will do the job
+        }
+    }
+   
+   if(odd){ if(odd % 2 == 0){
+        cout<<"Second";
+    }
+    else{
+        cout<<"First";
+    }}
+    else{
+         cout<<"First";
+    }
+}
