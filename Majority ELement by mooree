@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+// majority element better solution using Moore's Voting Algorithm 
+int main(){
+    int n;
+    cin>>n;
+    vector<int>vec(n);
+    int cnt =0;
+    int el;
+    for(int i =0;i<n;i++){
+        cin>>vec[i];
+    }
+    for(int i =0;i<n;i++){
+       if(cnt ==0){
+            cnt = 1;
+            el = vec[i];
+       }
+       else if(el == vec[i]){
+        cnt++;
+       }
+       else{
+        cnt--;
+       }
+    }
+    // if it's given that majority elemet exists
+    cout<<el;
+    // else iterate through the whole array and find the el frequncy and if it is greater than the n/2 then return the el else -1
+
+}
