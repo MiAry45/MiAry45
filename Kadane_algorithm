@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+//kadane algorithm 
+// generating all subarray(contigious manner element)
+using namespace std;
+int main(){
+    vector<int>vec{-2,-3,4,-1,-2,1,5,-3};
+    int sum = 0;
+    int mx = -12344;
+    vector<int>vec1;
+    for(int i =0;i< vec.size();i++){
+        sum += vec[i];
+        vec1.emplace_back(vec[i]);
+        if( sum < 0){
+            sum =0;
+            // vec1.erase(jisko delete karna hai);
+            vec1.clear();
+        }
+        mx = max(mx,sum);
+    }
+    for(auto it : vec1){
+        cout<<it<<" ";
+    }
+}
