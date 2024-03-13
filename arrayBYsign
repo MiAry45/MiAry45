@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    vector<int>vec{-1,2,3,4,-3,1};
+    int s = vec.size();
+    vector<int>vecc,pos,neg;    
+    for(int i =0;i<s;i++){
+        if(vec[i] < 0){ // i.e it is negative
+            neg.emplace_back(vec[i]);
+        }
+        else{
+            pos.emplace_back(vec[i]);
+        }
+    }
+    int sn = neg.size();
+    int sp = pos.size();
+
+    for(int i =0;i<sp;i++){
+         if(i<sp)vecc.emplace_back(pos[i]);
+        if(i < sn)vecc.emplace_back(neg[i]);
+
+    }
+    for(auto it : vecc){
+        cout<<it<<" ";
+    }
+}
