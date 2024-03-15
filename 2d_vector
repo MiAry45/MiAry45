@@ -1,0 +1,26 @@
+// Instead of dogging your footsteps it disappears but you dont notice anything
+// Your dog is upstears
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    // multi dimensional vector
+    vector<vector<int>>vec;
+    for(int i =0;i<4;i++){
+        vector<int>temp;
+        for(int j =0;j<6;j++){
+            int k;
+            cin>>k;
+            temp.emplace_back(k);
+        }   
+        vec.emplace_back(temp);
+    }
+    // cout<<vec.size(); // only gives the number of rows present in it
+    // cout<<vec[0].size(); // will give the number of elemets in a row for particular 
+   for(int i =0;i<vec.size();i++){
+        for(int j =0;j<vec[i].size();j++){
+         cout<<vec[i][j]<<" ";
+        }   
+        cout<<endl;
+    }
+}
+   
