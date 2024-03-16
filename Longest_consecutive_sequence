@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    // order of the vector don't matter
+    // but set will only store the unique elemets
+   unordered_set<int>st;
+   for(int i =0;i<5;i++){
+    int k ;
+    cin>>k;
+    st.insert(k);
+   }
+   int maxx = INT_MIN;
+   for(auto it : st){
+        if(st.find(it-1) == st.end()){ // it is a starting point
+ // the above line means that we don't have ex 5 then 4 don't exist int the vector
+        int cnt =1; // ek element toh hai
+        int x = it; // it is an iterator
+        while(st.find(x+1) != st.end()){ 
+            // means the x+1 exists in  the set 
+            // means if x= 5 , than check that
+            // does 6 exists in the vector
+            // 
+            x=x+1;
+            // jab tak check karte rahao 
+            //while wali condition satisfy ne 
+            // hoti
+            // 
+            cnt++;
+        }
+        maxx = max(maxx,cnt);
+
+        }
+   }
+   cout<<maxx;
+}
