@@ -1,0 +1,25 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+vector<vector<int>> insert_vector(vector<vector<int>>& vec) {
+    cout << "Enter the elements: \n";
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 2; j++) {
+            cin >> vec[i][j];
+        }
+    }
+    return vec; // Return the modified vector
+}
+
+int main() {
+    vector<vector<int>> vec(4, vector<int>(2));
+    vec = insert_vector(vec); // Assign the returned vector to vec
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 2; j++) {
+            cout << vec[i][j] << " ";
+        }
+        cout << endl;
+    }
+    return 0;
+}
