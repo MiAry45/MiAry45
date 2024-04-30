@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+int t;
+cin>>t;
+while((t--)>0){
+int a,b,k1,k2,q1,q2;
+cin>>a>>b>>k1>>k2>>q1>>q2;
+vector<pair<int,int>>vec{{a,b},{a,-b},{-a,b},{-a,-b},
+                          {b,a},{b,-a},{-b,a},{-b,-a}};
+set<pair<int,int>>s1,s2;
+for(auto d: vec){
+    int x= k1+d.first;
+    int y = k2+d.second;
+    s1.insert({x,y});
+      x= q1+d.first;
+      y = q2+d.second;
+    s2.insert({x,y});
+}
+int cnt =0;
+for(auto id : s1){
+    if(s2.find(id) != s2.end()){
+        cnt++;
+    }
+}
+cout<<cnt<<endl;
+}
+    return 0;
+}
