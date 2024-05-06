@@ -1,0 +1,25 @@
+// subsequence 
+#include <bits/stdc++.h>
+using namespace std;
+int subsequence(int ind, vector<int>empt, vector<int>vec, int n){
+if(ind >=n){
+    // print the vector empt
+    for(int i =0;i<empt.size();i++){
+        cout<<empt[i]<<" ";
+    }
+    cout<<endl;
+    return 0;
+}
+empt.emplace_back(vec[ind]);
+subsequence(ind+1,empt,vec,n); // take the current element 
+empt.pop_back();
+subsequence(ind+1,empt,vec,n); // .. condition of being not taking 
+}
+int main(){
+    vector<int>vec{3,1,2};
+    vector<int>vec1;
+    int n =3;
+    int ind =0;
+    subsequence(ind,vec1,vec,n);
+    return 0;
+}
