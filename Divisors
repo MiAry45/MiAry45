@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+//even if ur not doing well, just don't give up and keep going love from Aryan Umesh 
+// PRACTICE PRACTICE PRACTICE, that's the only way to achieve what u want 
+using namespace std;
+typedef long long ll;
+int main(){
+ll t;
+cin>>t;
+while(t--){
+ll n;
+cin>>n;
+ll a =1;
+ll k =0;
+for(ll i =2;i*i<=n;i++){ // divisor
+if(n % i == 0){
+   //n%i gives the one divisor
+//    and n/i gives the other divisor // by this u can print the 
+// divisor of n between 1 and n excluding 1 and n
+}
+}
+}
+    return 0;
+}
