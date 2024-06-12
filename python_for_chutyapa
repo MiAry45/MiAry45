@@ -1,0 +1,75 @@
+#name = "Aryan Sharma"
+'''name.upper()j
+#name.lower()'''
+#print(name.find('Aryab')) # gives the answer in gives the answer in zero base indexi
+# name.replace("T","M") permanenet replacement
+# ar in name ... return true or false
+''' 
+operator in python
+/ divide == for float value
+// int division 
+% modulo
+power x**y  means  x^y
+operator precedence 
+*, @, /, //, % is left to right is the order of their priority
+print(3<2) 
+or(||) and (&&) not (!)
+if condition :
+    indentation should be followed
+elif conditon:
+else:
+range(5) ==  means (0....5)
+'''
+#number = range(6)
+#print(number)
+#while condition :
+    #i++ dont exist here
+    #use i +=1
+# i =5;
+# while i >=0:
+#     print(i*'*')
+#     i-=1
+# range(starting,ending,inc/dec)
+# for i in range(x)
+# list in python collection of datatypes
+l = ['Arayn','Sharma','I love u bro','Hey mum']
+print(l[0:2]) # [starting,end ] , include the starting point and one before the ending point
+# operation with list
+# l.append() last mai kuch value add karne ke liye
+# l.insert(index,value) zero based  indexing 
+# to search a value in a list( value in list) this will give me the result in t/f
+# len(list) 
+# list.clear() ,, to delete all element in list
+# del list_name[index to be deleted]
+# pop(list_name) // this deletes the last element of a list
+# for val in list_name:
+    # val will give me the elemet of list_name one by one
+# tuple is immutable :
+# initilization is tuple_name = (v1,v2,v3);
+'''
+tuple_name.count(jisko occurence pata lagani hai) this will return the occurence of the number inside mentioned
+tuple_name.index(jiska index jana hai)
+                now coming to the conclusion
+                [] ~ means list
+                () ~ means tuple even without them like num = a,b,c,d will also condidered as tuple
+                {} ~ means set --- they stores the unique elements unorderd, cant be accessed through index based
+            dictionary :
+            dict = {"key":"keyvalue",....}
+            print(dict[key]) // will give me the keyvalue of the key
+            // directluy add bhe kr sakte hai values 
+            like... dict[xy] = z
+            then xy will keyvalue of z will also be added in that 
+            
+    ********* functions in python**************
+    inbuilt :
+    int()
+    str()
+    bool()
+    module function 
+    import math
+    from math import * // sarree function mil jate hai 
+    print(sqrt(9))
+    function in python :
+    def function_name(parameter):
+            //do something
+'''
