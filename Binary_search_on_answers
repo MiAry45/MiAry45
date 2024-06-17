@@ -1,0 +1,17 @@
+ ll low =1;
+     ll high = 1e9;
+     while(low <= high){
+        ll mid = (low+high)/2;
+       
+        //this exceeds the long long range :
+        if(ans == c){
+            cout<<mid/2<<"\n";
+            break;
+        }
+        else if(ans > c){
+            high = mid-1;
+        }
+        else{
+            low = mid+1;
+        }
+     }
