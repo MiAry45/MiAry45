@@ -1,0 +1,74 @@
+#include <bits/stdc++.h>
+using namespace std;
+class Node{
+    public:
+    //data members;
+    int data;
+    Node *next;
+    Node(int data1,Node *next1){
+        data = data1;
+        next = next1;
+    }
+    Node(int data1){
+        data = data1;
+        next = nullptr;
+    }
+};
+int LL_size(Node*head1){
+Node* head = head1;
+int cnt =0;
+if(head == nullptr) return 0;
+while(head){
+cnt++;
+head = head->next;
+}
+return cnt;
+}
+Node* deletion(Node* head , int val){
+    if(head->data == val){
+        Node *temp = head;
+        head = head->next;
+        temp->next = nullptr;
+        free(temp);
+        return head;
+    } // if the head is the required elem
+    Node *temp = head;
+    Node *prev = nullptr;
+    while(temp){
+        if(temp->data == val){
+            prev->next = prev->next->next;
+            free(temp);
+            break;
+        }
+        prev = temp;
+        temp = temp->next;
+    }
+
+    return head;
+}
+Node* convert_Arr_to_LL(vector<int>vec){
+    Node *head = new Node(vec[0]); // initialize with end point being the null
+    Node *temp = head; // yay
+    int n = vec.size();
+    for(int i =1;i<n;i++){
+        Node *local = new Node(vec[i]);
+        temp->next = local;
+        temp = local;
+    }
+    return head;
+}
+void print(Node *head){
+    while(head){
+        cout<<head->data<<" ";
+        head = head->next;
+    }
+}
+int main(){
+vector<int>vec{1,2,3,4,5,6,7,8};
+Node * n = convert_Arr_to_LL(vec);
+int ind;
+cout<<"Enter the value \n";
+cin>>ind;
+Node* val = deletion(n,ind);
+print(val);
+}
