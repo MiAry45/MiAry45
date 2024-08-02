@@ -1,0 +1,14 @@
+ Node* constructDLL(vector<int>& arr) {
+        // code here
+    int n = arr.size();
+    Node *head = new Node(arr[0]); // means ki plhe wala null and next wala bhe null
+    Node *pre = head;
+    if(n ==1) return head;
+    for(int i =1;i<n;i++){
+        Node *temp = new Node(arr[i]);
+        pre->next = temp;
+         temp->prev = pre;
+        pre = temp;
+    }
+    return head;
+    }
