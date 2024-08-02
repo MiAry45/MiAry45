@@ -1,0 +1,95 @@
+#include <bits/stdc++.h>
+using namespace std;
+class Node{
+    public:
+    //data members;
+    int data;
+    Node *next;
+    Node(int data1,Node *next1){
+        data = data1;
+        next = next1;
+    }
+    Node(int data1){
+        data = data1;
+        next = nullptr;
+    }
+};
+int LL_size(Node*head1){
+Node* head = head1;
+int cnt =0;
+if(head == nullptr) return 0;
+while(head){
+cnt++;
+head = head->next;
+}
+return cnt;
+}
+Node* deletion(Node* head , int ind){
+    Node *head1 = head;
+    int len = LL_size(head);
+    if(len < ind) return head1; 
+    if(ind == 1){
+        // delete the head
+        Node*temp = head1;
+        temp = temp->next;
+        head1->next = nullptr;
+        free(head1);
+        return temp;
+    }
+    if(ind == len){
+        //tail's deletion
+        Node* temp = head1;
+        while(temp->next->next != nullptr){
+            temp = temp->next;
+        }
+        Node *fre = temp;
+        fre = fre->next;
+        free(fre);
+        temp->next = nullptr;
+        return head1;
+    }
+    // deletion of element in b/w the LL
+    int cnt = 0;
+    Node *rem = head1;
+    while(head1){
+        cnt++;
+    
+    if(cnt == ind){
+        Node *fre = head1;
+        rem->next = head1->next;
+        free(fre);
+        return head;
+    }
+    else{
+        rem = head1;
+        head1 = head1->next;
+    }
+    
+    }
+}
+Node* convert_Arr_to_LL(vector<int>vec){
+    Node *head = new Node(vec[0]); // initialize with end point being the null
+    Node *temp = head; // yay
+    int n = vec.size();
+    for(int i =1;i<n;i++){
+        Node *local = new Node(vec[i]);
+        temp->next = local;
+        temp = local;
+    }
+    return head;
+}
+void print(Node *head){
+    while(head){
+        cout<<head->data<<" ";
+        head = head->next;
+    }
+}
+int main(){
+vector<int>vec{1,2,3,4,5,6,7,8};
+Node * n = convert_Arr_to_LL(vec);
+int ind;
+cout<<"Enter the value of element that u want to delete";
+cin>>ind;
+Node* val = deletion(n,ind);
+print(val);
+}
