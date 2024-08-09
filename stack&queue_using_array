@@ -1,0 +1,75 @@
+#include <bits/stdc++.h>
+using namespace std;
+// stack using array
+class Stack{
+    int *arr;
+    int top;
+    public:
+        Stack(){
+            top =-1;
+            arr = new int[15];
+        }
+        void push(int x){
+            top++;
+            arr[top]=x;
+        }
+        int pop(){
+            if(top == -1) return -1;
+            int x = arr[top];// this is the element to be deleted
+            top--;
+        }
+        int Top(){
+            if(top == -1) return -1;
+            return arr[top];
+        }
+        int size(){
+            return top+1;
+        }
+};
+class Queue{
+    int *arr; // an array
+    int end,start,currSize,maxSize;
+    public:
+    Queue(){
+        arr = new int[20];
+        end = -1;
+        start = -1;
+        currSize =0;
+        maxSize = 20;
+    }
+    void push(int x){
+        if(currSize >= maxSize){
+            cout<<"Queue is full...\nExiting\n";
+            exit(0);
+        }
+        if(start == -1){
+            start++;
+        }
+        end = (end+1)/maxSize;
+        arr[end] = x;
+        currSize++;
+    } 
+    int pop(){
+        if(start == -1) {
+            return -1;
+        }
+        int y = arr[start];
+        if(currSize == 1){
+            start =-1;
+            end =-1;
+        }
+        else start = (start+1)% maxSize;
+        currSize--;
+        return y;
+    }
+    top(){
+        if(start == -1) return -1;
+        return arr[start];
+    }
+    size(){
+        return currSize;
+    }
+};
+int main(){
+
+}
