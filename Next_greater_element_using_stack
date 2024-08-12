@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+// next greater element 
+int main(){
+    vector<int>vec{3,10,4,2,1,2,6,1,7,2,9};
+    stack<int>gre;          
+    int m = vec.size();
+    vector<int>ans(m,-1);
+    for(int i = m-1;i >=0;i--){
+        while(!gre.empty()){
+            if(gre.top() > vec[i]){
+                    ans[i] = gre.top();
+                    break;
+            }
+            gre.pop();
+        }
+        gre.push(vec[i]);
+    }
+    for(auto it : ans){
+        cout<<it<<" ";
+    }
+}
