@@ -1,0 +1,17 @@
+int fun(int a, int b) 
+{ 
+   if (b == 0) 
+       return 1; 
+   if (b % 2 == 0) 
+       return fun(a*a, b/2); 
+   
+   return fun(a*a, b/2)*a; 
+} 
+long long Pow(long long a, long long n){
+       int mod = 1e9+7;
+        if(b == 0) return 1LL;
+        ll aa = ((a%mod)*(a%mod))%mod;
+        if(b%2 != 0) return ((pow(aa,b/2)%mod)*(a%mod))%mod;
+        return (pow(aa,b/2)%mod);
+    }
+   
