@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+class TreeNode{
+    public:
+    int data;
+    TreeNode* right;
+    TreeNode* left;
+    TreeNode(int data){
+        this->data = data;
+        right =left = nullptr;
+        // initializes a single value;
+    }
+};
+TreeNode* set1(vector<int>&arr, int ind, int n){
+    if(ind >= n){
+        return nullptr;
+    }
+    TreeNode* root = new TreeNode(arr[ind]);
+    root->left = set1(arr,2*ind+1,n);
+    root->right = set1(arr,2*ind+2,n);
+    return root;
+}
+int main(){
+    vector<int>arr{1,2,3,4,5,6,7,8,9,10,11,12};
+    TreeNode* root = set1(arr,0,arr.size());
+
+}
