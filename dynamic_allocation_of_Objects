@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+class student{
+    vector<int>score;
+    public:
+    void input(){
+        score.assign(5,0);
+        for(int i =0;i<5;i++){
+            int a;
+            cout<<"Enter the marks of subject number"<<i<<"\n";
+            cin>>a;
+            score[i] =a;
+        }
+    }
+    int calculate(){
+        int sum =0;
+        for(int i =0;i<5;i++){
+            sum += score[i];
+        }
+        return sum;
+    }
+};
+#define ll long long
+int main(){
+    int n;
+    cin>>n;
+    student* std = new student[n];
+    for(int i =0;i<n;i++){
+        std[i].input();
+        cout<<std[i].calculate()<<"\n";
+    }
+
+}
