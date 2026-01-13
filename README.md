@@ -1,7 +1,5 @@
 - 👋 Hi, I’m @MiAry45 
-- 👀 I’m interested in AI(Image sensing)
-- 🌱 I’m currently learning c++
-- 💞️ currently learning, do share your advice,
+- I am a Full Stack Dev, and I want to make something that can help Trillions of people.
 - 📫 How to reach me  mail : ganbarearyan45@gmail.com 
 
 <!---
